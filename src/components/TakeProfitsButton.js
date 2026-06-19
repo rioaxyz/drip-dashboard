@@ -178,7 +178,7 @@ const TakeProfitsButton = ({ disabled, roi, address, loadAccount }) => {
             }
       }
     >
-      <Coins color="#00f900" /> Take Profits
+      <Coins size={18} className="text-success" /> Take Profits
     </a>
   );
 };

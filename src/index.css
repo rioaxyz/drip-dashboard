@@ -2,13 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.markdown > * {
-  all: revert;
+html,
+body {
+  min-height: 100%;
 }
 
-.active-account-info {
-  top: 56px;
-  left: 42px;
+/* Deep ocean backdrop — a gentle gradient from surface water to the depths */
+body {
+  background-color: #0a2540;
+  background-image: radial-gradient(
+      1200px 600px at 50% -10%,
+      rgba(46, 155, 214, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0b2a49 0%, #0a2540 40%, #061a30 100%);
+  background-attachment: fixed;
+}
+
+.markdown > * {
+  all: revert;
 }
 
 a {
