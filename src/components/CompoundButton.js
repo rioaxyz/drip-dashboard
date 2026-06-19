@@ -54,7 +54,7 @@ const CompoundButton = ({ disabled, roi, address, loadAccount }) => {
         window.notification_modal.showModal();
       }}
     >
-      <Recycle color="#000000" /> Compound
+      <Recycle size={18} /> Compound
     </a>
   );
 };

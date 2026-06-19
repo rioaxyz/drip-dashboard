@@ -14,39 +14,38 @@ const NotificationDialog = () => {
       <dialog id="notification_modal" className="modal">
         <form
           method="dialog"
-          className="modal-box w-11/12 max-w-5xl absolute h-56"
+          className="modal-box w-11/12 max-w-3xl bg-base-100 border border-base-300"
         >
           <button
             id="notification_dialog_close"
             className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
           >
-            x
+            ✕
           </button>
-          <h1 className="font-bold text-center py-10 text-5xl">
+          <h1 className="font-semibold text-center py-10 text-4xl tracking-tight">
             {notification?.text ? notification?.text : ""}
           </h1>
-          <div className="text-center text-xl relative">
+          <div className="text-center text-sm relative pb-4">
             {notification?.txnHash ? (
-              <>
-                <div className="w-fit mx-auto relative">
-                  <div className="absolute -left-7 top-0.5">
-                    <CheckCircle2 color="#00f900" />
-                  </div>
-                  Txn Hash:{" "}
-                  <a
-                    rel="noreferrer nofollow"
-                    className="text-blue-600 no-underline"
-                    target="_blank"
-                    href={`https://bscscan.com/tx/${notification?.txnHash}`}
-                  >
-                    {notification?.txnHash}
-                  </a>
-                </div>
-              </>
+              <div className="inline-flex items-center gap-2 max-w-full px-4 py-2 rounded-full bg-success/10 border border-success/30">
+                <CheckCircle2 size={18} className="text-success shrink-0" />
+                <span className="text-base-content/70">Txn hash:</span>
+                <a
+                  rel="noreferrer nofollow"
+                  className="text-info no-underline font-mono truncate"
+                  target="_blank"
+                  href={`https://bscscan.com/tx/${notification?.txnHash}`}
+                >
+                  {notification?.txnHash}
+                </a>
+              </div>
             ) : (
               ""
             )}
           </div>
+        </form>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
         </form>
       </dialog>
     </>
